@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
       output.appendChild(row);
     });
 
-    // Calculate total time taken (max of all promise times)
+    
     const totalTime = Math.max(...results.map((r) => parseFloat(r.time))).toFixed(3);
     const totalRow = document.createElement("tr");
     totalRow.innerHTML = `<td>Total</td><td>${totalTime}</td>`;
