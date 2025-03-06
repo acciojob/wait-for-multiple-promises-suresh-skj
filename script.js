@@ -2,10 +2,10 @@
 document.addEventListener("DOMContentLoaded", () => {
   const output = document.getElementById("output");
 
-  // Initially show "Loading..." message
+ 
   output.innerHTML = `<tr><td colspan="2">Loading...</td></tr>`;
 
-  // Function to create a promise with a random delay
+  
   function createPromise(index) {
     const delay = Math.random() * 2 + 1; // Random delay between 1 and 3 seconds
     return new Promise((resolve) => {
@@ -13,15 +13,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Create three promises
+ 
   const promises = [createPromise(1), createPromise(2), createPromise(3)];
 
-  // Wait for all promises to resolve
+
   Promise.all(promises).then((results) => {
-    // Remove the loading row
+   
     output.innerHTML = "";
 
-    // Populate table with resolved values
+   
     results.forEach((result) => {
       const row = document.createElement("tr");
       row.innerHTML = `<td>${result.name}</td><td>${result.time}</td>`;
